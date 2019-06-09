@@ -1,9 +1,10 @@
 - id: Ghost
   avatar: avatars/ghost.png
   bio: The professional publishing platform
-  twitter: TryGhost
-  facebook: ghost
-  website: https://ghost.org/
+  # twitter: TryGhost
+  # facebook: ghost
+  # website: https://ghost.org/
+  github: m-czernek
   location: On a plane
 - id: Another Author
   avatar: avatars/ghost.png

@@ -26,6 +26,7 @@ import Helmet from 'react-helmet';
 import config from '../website-config';
 import Website from '../components/icons/website';
 import Twitter from '../components/icons/twitter';
+import Github from '../components/icons/github';
 
 const HiddenMobile = css`
   @media (max-width: 500px) {
@@ -224,6 +225,18 @@ const Author: React.FunctionComponent<AuthorTemplateProps> = props => {
                     <Facebook />
                   </a>
                 )}
+                {author.github && (
+                  <a
+                  className="social-link-gh"
+                  css={SocialLink}
+                  href={`https://www.github.com/${author.github}`}
+                  title="Github"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github />
+                </a>
+                )}
                 {/* TODO: RSS for author */}
                 {/* <a
                   css={SocialLink} className="social-link-rss"
@@ -265,6 +278,7 @@ export const pageQuery = graphql`
   query($author: String) {
     authorYaml(id: { eq: $author }) {
       id
+      github
       website
       twitter
       bio
