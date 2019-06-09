@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Halfastack.com',
+    title: 'halfastack.com',
     description: 'Is your stack half empty, or half full?',
     siteUrl: 'http://localhost', // full path to blog - no ending slash
   },

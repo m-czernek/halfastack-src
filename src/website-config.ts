@@ -51,8 +51,8 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'Halfastack.com',
   description: 'Is your stack half empty, or half full?',
-  coverImage: 'img/blog-cover.jpg',
-  logo: 'img/ghost-logo.png',
+  coverImage: 'img/profile.jpg',
+  logo: 'avatars/halfastack.png',
   lang: 'en',
   siteUrl: 'https://gatsby-casper.netlify.com',
   showSubscribe: false,

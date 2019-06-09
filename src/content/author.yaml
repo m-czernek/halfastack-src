@@ -1,11 +1,13 @@
 - id: Ghost
-  avatar: avatars/ghost.png
+  avatar: avatars/halfastack.png
   bio: The professional publishing platform
   # twitter: TryGhost
   # facebook: ghost
   # website: https://ghost.org/
   github: m-czernek
+  linkedin: marek-czernek-697a13102
   location: On a plane
+  profile_image: img/profile.jpg
 - id: Another Author
   avatar: avatars/ghost.png
   bio: This is another test author with a profile background image
@@ -13,4 +15,5 @@
   facebook: ghost
   website: https://ghost.org/
   location: On a plane
+  github: m-czernek
   profile_image: img/alex-knight-326705-unsplash.jpg
