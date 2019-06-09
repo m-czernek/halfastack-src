@@ -3,7 +3,6 @@ layout: post
 title: "Hello from MD"
 author: Ghost
 tags: ["Hello-world","Hello"]
-image: img/demo4.jpg
 date: "2019-05-28T16:46:38Z"
 draft: false
 ---

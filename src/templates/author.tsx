@@ -27,6 +27,7 @@ import config from '../website-config';
 import Website from '../components/icons/website';
 import Twitter from '../components/icons/twitter';
 import Github from '../components/icons/github';
+import Linkedin from "../components/icons/linkedin";
 
 const HiddenMobile = css`
   @media (max-width: 500px) {
@@ -97,6 +98,8 @@ interface AuthorTemplateProps {
       twitter?: string;
       facebook?: string;
       location?: string;
+      github?: string;
+      linkedin?: string;
       // eslint-disable-next-line @typescript-eslint/camelcase
       profile_image?: {
         childImageSharp: {
@@ -237,6 +240,18 @@ const Author: React.FunctionComponent<AuthorTemplateProps> = props => {
                   <Github />
                 </a>
                 )}
+                {author.linkedin && (
+                  <a
+                  className="social-link-linkedin"
+                  css={SocialLink}
+                  href={`https://www.linkedin.com/in/${author.linkedin}`}
+                  title="Linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin />
+                </a>
+                )}
                 {/* TODO: RSS for author */}
                 {/* <a
                   css={SocialLink} className="social-link-rss"
@@ -284,6 +299,7 @@ export const pageQuery = graphql`
       bio
       facebook
       location
+      linkedin
       profile_image {
         childImageSharp {
           fluid(maxWidth: 3720) {
