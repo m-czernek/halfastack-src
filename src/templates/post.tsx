@@ -1,5 +1,4 @@
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
 import * as _ from 'lodash';
 import { setLightness } from 'polished';
 import * as React from 'react';
@@ -135,6 +134,7 @@ interface PageTemplateProps {
       frontmatter: {
         title: string;
         date: string;
+        excerpt: string;
         userDate: string;
         image: {
           childImageSharp: {
@@ -221,11 +221,11 @@ const PageTemplate: React.FunctionComponent<PageTemplateProps> = props => {
         <html lang={config.lang} />
         <title>{post.frontmatter.title}</title>
 
-        <meta name="description" content={post.excerpt} />
+        <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.frontmatter.title} />
-        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:description" content={post.frontmatter.excerpt || post.excerpt} />
         <meta property="og:url" content={config.siteUrl + props.pathContext.slug} />
         {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
           <meta property="og:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`} />
@@ -241,7 +241,7 @@ const PageTemplate: React.FunctionComponent<PageTemplateProps> = props => {
         {config.facebook && <meta property="article:author" content={config.facebook} />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.frontmatter.title} />
-        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:description" content={post.frontmatter.excerpt || post.excerpt} />
         <meta name="twitter:url" content={config.siteUrl + props.pathContext.slug} />
         {(post.frontmatter.image && post.frontmatter.image.childImageSharp) && (
           <meta name="twitter:image" content={`${config.siteUrl}${post.frontmatter.image.childImageSharp.fluid.src}`} />
@@ -337,6 +337,7 @@ export const query = graphql`
         title
         userDate: date(formatString: "D MMMM YYYY")
         date
+        excerpt
         tags
         image {
           childImageSharp {
