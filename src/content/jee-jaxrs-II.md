@@ -3,6 +3,7 @@ layout: post
 title: "Exploring RESTFul application with JAX-RS"
 image: img/testimg-cover.jpg
 author: Ghost
+draft: false
 date: 2018-05-19T08:03:47.149Z
 tags: 
   - JEE
