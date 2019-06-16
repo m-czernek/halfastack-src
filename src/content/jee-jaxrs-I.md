@@ -2,7 +2,7 @@
 layout: post
 title: "[REST services with JAX-RS] Enter the RESTFul world"
 image: img/testimg-cover.jpg
-author: Ghost
+author: Marek
 date: 2018-05-11T08:03:47.149Z
 excerpt: aaa
 tags: 

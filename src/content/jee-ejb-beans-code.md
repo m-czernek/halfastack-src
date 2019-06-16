@@ -2,7 +2,7 @@
 layout: post
 title: "Java EE EJB Beans II: Code Walkthrough"
 image: img/testimg-cover.jpg
-author: Ghost
+author: Marek
 date: 2018-03-30T07:03:47.149Z
 tags: 
   - JEE

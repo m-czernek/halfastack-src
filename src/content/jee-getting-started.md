@@ -2,7 +2,7 @@
 layout: post
 title: "Java EE Series: Getting Started"
 image: img/testimg-cover.jpg
-author: Ghost
+author: Marek
 date: 2018-03-17T07:03:47.149Z
 tags: 
   - Tests
