@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Exploring RESTFul application with JAX-RS"
-image: img/testimg-cover.jpg
+image: img/article-background.png
 author: Marek
 draft: false
 date: 2018-05-19T08:03:47.149Z

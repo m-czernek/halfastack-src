@@ -14,7 +14,6 @@ import SiteNavLogo from './SiteNavLogo';
 const HomeNavRaise = css`
   @media (min-width: 900px) {
     position: relative;
-    top: -70px;
   }
 `;
 
@@ -26,7 +25,8 @@ const SiteNavStyles = css`
   align-items: flex-start;
   overflow-y: hidden;
   height: 40px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;
 
 const SiteNavLeft = styled.div`
