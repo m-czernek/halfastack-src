@@ -2,7 +2,7 @@
 layout: post
 title: "[JPA Setup] Deploying a Database for JEE Environment"
 image: img/testimg-cover.jpg
-author: Ghost
+author: Marek
 date: 2018-04-30T07:03:47.149Z
 tags: 
   - JEE
