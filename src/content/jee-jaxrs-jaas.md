@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jazzy security with JAAS"
-image: img/testimg-cover.jpg
+image: img/article-background.png
 author: Marek
 draft: false
 date: 2018-05-28T08:03:47.149Z

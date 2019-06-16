@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java EE Series: Getting Started"
-image: img/testimg-cover.jpg
+image: img/article-background.png
 author: Marek
 date: 2018-03-17T07:03:47.149Z
 tags: 

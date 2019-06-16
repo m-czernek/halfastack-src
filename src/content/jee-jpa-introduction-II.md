@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java EE JPA Introduction II"
-image: img/testimg-cover.jpg
+image: img/article-background.png
 author: Marek
 date: 2018-04-14T07:03:47.149Z
 tags: 
