@@ -37,11 +37,11 @@ const About: React.FunctionComponent = () => (
           <PostFullContent className="post-full-content">
             <div className="post-content">
               <p>
-                Halfastack.com is a personal blog site of a Red Hat employee. Content here does not represent Red Hat in any way,
+                Halfastack.info is a personal blog site of a Red Hat employee. Content here does not represent Red Hat in any way,
                 shape, or form, and is a reflection of my personal opinions, experiences, and knowledge.
               </p>
               <p>
-                Halfastack.com serves as a learning place for technologies that may be a bit more difficult to learn, or get 
+                Halfastack.info serves as a learning place for technologies that may be a bit more difficult to learn, or get 
                 access to. Generally, it is focused on Red Hat portfolio, only due to the fact that I have the most experience with
                 Red Hat portfolio.
               </p>
