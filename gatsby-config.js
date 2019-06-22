@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'halfastack.com',
     description: 'Is your stack half empty, or half full?',
-    siteUrl: 'http://localhost', // full path to blog - no ending slash
+    siteUrl: 'https://halfastack.info', // full path to blog - no ending slash
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': 'AuthorYaml',
