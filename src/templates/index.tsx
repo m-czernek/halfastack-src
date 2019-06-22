@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import { css } from '@emotion/core';
 import Helmet from 'react-helmet';
@@ -9,6 +9,8 @@ import PostCard from '../components/PostCard';
 import Wrapper from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import config from '../website-config';
+import Pagination from '../components/Pagination';
+
 import {
   inner,
   outer,
@@ -20,7 +22,7 @@ import {
   SiteMain,
   SiteTitle,
 } from '../styles/shared';
-import { PageContext } from '../templates/post';
+import { PageContext } from './post';
 
 const HomePosts = css`
   @media (min-width: 795px) {
@@ -87,6 +89,12 @@ export interface IndexProps {
 const IndexPage: React.FunctionComponent<IndexProps> = props => {
   const width = props.data.header.childImageSharp.fluid.sizes.split(', ')[1].split('px')[0];
   const height = String(Number(width) / props.data.header.childImageSharp.fluid.aspectRatio);
+  const { currentPage, numPages } = props.pageContext;
+  const isFirst = currentPage === 1;
+  const isLast = currentPage === numPages;
+  const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
+  const nextPage = (currentPage + 1).toString();
+   
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
@@ -162,7 +170,7 @@ const IndexPage: React.FunctionComponent<IndexProps> = props => {
           </div>
         </main>
         {props.children}
-
+        <Pagination currentPage={props.pageContext.currentPage} numPages={props.pageContext.numPages} />
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -172,7 +180,7 @@ const IndexPage: React.FunctionComponent<IndexProps> = props => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query {
+  query blogPageQuery($skip: Int!, $limit: Int!) {
     logo: file(relativePath: { eq: "img/logo.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
@@ -194,7 +202,8 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC },
       filter: { frontmatter: { draft: { ne: true } } },
-      limit: 1000,
+      limit: $limit,
+      skip: $skip
     ) {
       edges {
         node {
