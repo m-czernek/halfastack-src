@@ -1,6 +1,9 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
+import { darken } from 'polished';
 import { css } from '@emotion/core';
+
+import { colors } from '../styles/colors';
 
 export interface PaginationProps {
   currentPage: number;
@@ -25,11 +28,10 @@ const navCss = css`
     border: 1px solid #ddd;
     margin: 0 4px;
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-
-    &:first-child {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-    }
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    margin-bottom: 5px;
+    min-width: 50px;
 
     &:last-child {
       border-top-right-radius: 5px;
@@ -37,9 +39,9 @@ const navCss = css`
     }
 
     &.active {
-      background-color: #4CAF50;
-      color: white;
-      border: 1px solid #4CAF50;
+      -webkit-box-shadow:inset 3px 0px 0px 0px ${darken(0.05, colors.darkpurple)};
+      -moz-box-shadow:inset 3px 0px 0px 0px ${darken(0.05, colors.darkpurple)};
+      box-shadow:inset 3px 0px 0px 0px ${darken(0.05, colors.darkpurple)};
     }
 
     &:hover:not(.active) {
@@ -54,24 +56,27 @@ const Pagination: React.FunctionComponent<PaginationProps> = ({currentPage, numP
   const isLast = currentPage === numPages;
   const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
   const nextPage = (currentPage + 1).toString();
+
   return (
     <nav css={navCss}>
       <div>
         {!isFirst && (
             <Link to={prevPage} rel="prev">
-              ← Previous Page
+              {/* << symbol */}
+              {String.fromCharCode(171)}
             </Link>
         )}
 
         {Array.from({ length: numPages }, (_, i) => (
-            <Link key={`pagination-number${i + 1}`} to={`/${i === 0 ? "" : i + 1}`}>
+            <Link className={i + 1 === currentPage ? "active" : ""} key={`pagination-number${i + 1}`} to={`/${i === 0 ? "" : i + 1}`}>
               {i + 1}
             </Link>
         ))}
-        
+
         {!isLast && (
             <Link to={nextPage} rel="next">
-              Next Page →
+              {/* >> symbol */}
+              {String.fromCharCode(187)}
             </Link>
         )}
       </div>
