@@ -4,6 +4,6 @@ The [Halfastack](https://halfastack.info) website is a statically generated webs
 
 * Gatsby
 * TypeScript
-* [Gatsby-Casper](https://github.com/scttcper/gatsby-casper.git) theme started
+* [Gatsby-Casper](https://github.com/scttcper/gatsby-casper.git) theme starter
 
 Visit halfastack.info for the rendered page.
