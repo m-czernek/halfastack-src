@@ -11,12 +11,11 @@ export interface PaginationProps {
 }
 
 const navCss = css`
-  
   text-align: center;
   div { 
     display: inline-block;
   }
-
+  
   a {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
     background: #fff;
@@ -24,6 +23,7 @@ const navCss = css`
     float: left;
     padding: 8px 16px;
     text-decoration: none;
+    -webkit-text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;
     margin: 0 4px;
@@ -48,6 +48,10 @@ const navCss = css`
       background-color: #ddd;
     }
 
+    &:hover {
+      text-decoration: none;
+      -webkit-text-decoration: none;
+    }
   }
 `
 
