@@ -28,15 +28,9 @@ const navCss = css`
     border: 1px solid #ddd;
     margin: 0 4px;
     box-shadow: rgba(39, 44, 49, 0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-radius: 6px;
     margin-bottom: 5px;
     min-width: 50px;
-
-    &:last-child {
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
 
     &.active {
       -webkit-box-shadow:inset 3px 0px 0px 0px ${darken(0.05, colors.darkpurple)};
